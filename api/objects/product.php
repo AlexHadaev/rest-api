@@ -69,7 +69,6 @@ class Product {
         $stmt->bindParam(":created", $this->created);
         // выполняем запрос
         if ($stmt->execute()) {
-            var_dump($stmt->insert_id);
             return true;
         }
 
@@ -245,5 +244,15 @@ class Product {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
         return $row['total_rows'];
+    }
+
+    public function lastId(){
+        $query = "SELECT MAX(id) FROM products;";
+
+        $stmt = $this->conn->prepare( $query );
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $row["MAX(id)"];
     }
 }

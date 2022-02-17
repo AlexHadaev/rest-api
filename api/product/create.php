@@ -41,8 +41,10 @@ if (
         // установим код ответа - 201 создано
         http_response_code(201);
 
+        $last_id = $product->lastId();
+        $last_id = (int)$last_id;
         // сообщим пользователю
-        echo json_encode(array("message" => "Товар был создан."), JSON_UNESCAPED_UNICODE);
+        echo json_encode(array("message" => "Товар был создан.", "id"=>$last_id), JSON_UNESCAPED_UNICODE);
     }
 
     // если не удается создать товар, сообщим пользователю
