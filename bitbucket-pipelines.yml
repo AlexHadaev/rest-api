@@ -1,7 +1,10 @@
-- pipe: atlassian/heroku-deploy:1.2.1
-  variables:
-    HEROKU_API_KEY: 'e7d3e031-66ba-40f8-97d9-8c45cc21cf1d'
-    HEROKU_APP_NAME: 'my-project-rest-api'
-    ZIP_FILE: 'my-project-rest-api.zip'
-    # WAIT: '<boolean>' # Optional.
-    # DEBUG: '<boolean>' # Optional
+pipelines:
+  branches:
+    master:
+      - pipe: atlassian/heroku-deploy:1.2.1
+        variables:
+          HEROKU_API_KEY: 'e7d3e031-66ba-40f8-97d9-8c45cc21cf1d'
+          HEROKU_APP_NAME: 'my-project-rest-api'
+          ZIP_FILE: 'my-project-rest-api.zip'
+          # WAIT: '<boolean>' # Optional.
+          # DEBUG: '<boolean>' # Optional
