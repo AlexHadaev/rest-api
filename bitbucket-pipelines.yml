@@ -2,11 +2,11 @@
 pipelines:
   default:
     - step:
-        name: Create artifact
+        name: 'Create artifact'
         script:
           - tar czfv application.zip dist/
         artifacts:
-          - application.zip
+          - 'application.zip'
     - parallel:
         - step:
             name: 'Build and Test'
