@@ -74,7 +74,7 @@ jQuery(function($){
             data : form_data,
             success : function(result) {
                 // продукт был создан, вернуться к списку продуктов
-                showProducts();
+                readOneProduct(result.id);
                 console.log(result, 'create result');
             },
             error: function(xhr, resp, text) {

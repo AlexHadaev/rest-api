@@ -102,7 +102,7 @@ jQuery(function($){
             data : form_data,
             success : function(result) {
                 // продукт был создан, возврат к списку продуктов
-                showProducts();
+                readOneProduct(result.id);
             },
             error: function(xhr, resp, text) {
                 // вывод ошибки в консоль

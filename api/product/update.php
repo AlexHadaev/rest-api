@@ -34,9 +34,9 @@ if ($product->update()) {
 
     // установим код ответа - 200 ok
     http_response_code(200);
-
+    $current_id = (int)$product->id;
     // сообщим пользователю
-    echo json_encode(array("message" => "Товар был обновлён."), JSON_UNESCAPED_UNICODE);
+    echo json_encode(array("message" => "Товар был обновлён.", "id"=>$current_id), JSON_UNESCAPED_UNICODE);
 }
 
 // если не удается обновить товар, сообщим пользователю
