@@ -4,7 +4,7 @@ pipelines:
     - step:
         name: 'Create artifact'
         script:
-          - tar czfv application.tgz /
+          - tar czfv application.tgz /opt/atlassian/bitbucketci/agent/build/
         artifacts:
           - 'application.tgz'
     - parallel:
