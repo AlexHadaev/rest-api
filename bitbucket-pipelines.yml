@@ -4,9 +4,9 @@ pipelines:
     - step:
         name: 'Create artifact'
         script:
-          - tar czfv application.zip dist/
+          - tar czfv application.tgz /
         artifacts:
-          - 'application.zip'
+          - 'application.tgz'
     - parallel:
         - step:
             name: 'Build and Test'
@@ -37,6 +37,6 @@ pipelines:
             variables:
               HEROKU_API_KEY: 'e7d3e031-66ba-40f8-97d9-8c45cc21cf1d'
               HEROKU_APP_NAME: 'my-project-rest-api'
-              ZIP_FILE: 'application.zip'
+              ZIP_FILE: 'application.tgz'
               # WAIT: '<boolean>' # Optional.
               # DEBUG: '<boolean>' # Optional
